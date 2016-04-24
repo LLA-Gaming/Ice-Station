@@ -164,3 +164,10 @@
 			if(prob(50))
 				return "trails_1"
 			return "trails_2"
+
+/mob/living/carbon/human/can_use_hands()
+	if(!..())
+		return 0
+	if(!has_active_hand())
+		return 0
+	return 1

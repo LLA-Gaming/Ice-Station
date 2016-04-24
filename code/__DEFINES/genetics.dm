@@ -82,3 +82,7 @@
 //Organ stuff, It's here because "Genetics" is the most relevant file for organs
 #define ORGAN_ORGANIC   1
 #define ORGAN_ROBOTIC   2
+
+#define ORGAN_FINE		0
+#define ORGAN_BROKEN	1
+#define ORGAN_MISSING	2

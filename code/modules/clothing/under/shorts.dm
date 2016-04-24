@@ -4,6 +4,7 @@
 	gender = PLURAL
 	body_parts_covered = GROIN
 	fitted = 0
+	arm_mask = "full"
 
 
 /obj/item/clothing/under/shorts/red

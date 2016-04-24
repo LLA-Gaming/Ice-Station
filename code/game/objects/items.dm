@@ -37,6 +37,9 @@
 
 	var/is_toggled = 0
 
+	var/arm_mask = "jumpsuit" //see update_icons.dm in humans
+	var/rolled_mask = "full"
+
 /obj/item/device
 	icon = 'icons/obj/device.dmi'
 

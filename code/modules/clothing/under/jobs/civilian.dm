@@ -7,6 +7,7 @@
 	item_state = "ba_suit"
 	item_color = "ba_suit"
 	can_roll = 1
+	rolled_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
@@ -135,6 +136,7 @@
 	icon_state = "bluesuit"
 	item_state = "bluesuit"
 	item_color = "bluesuit"
+	rolled_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/lawyer/purpsuit
@@ -143,6 +145,7 @@
 	item_state = "lawyer_purp"
 	item_color = "lawyer_purp"
 	fitted = 0
+	rolled_mask = "shortsleeve"
 
 /obj/item/clothing/under/lawyer/blacksuit
 	name = "black suit"
@@ -150,6 +153,7 @@
 	icon_state = "blacksuit"
 	item_state = "ba_suit"
 	item_color = "blacksuit"
+	rolled_mask = "shortsleeve"
 
 /obj/item/clothing/under/librarian
 	name = "sensible suit"

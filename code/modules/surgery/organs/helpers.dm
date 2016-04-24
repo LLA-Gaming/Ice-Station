@@ -19,4 +19,17 @@ mob/living/carbon/human/proc/isbleeding()
 	return Clamp(bleeding_state,0,3)
 
 
+//Mob has their active hand
+/mob/proc/has_active_hand()
+	return 1
 
+/mob/living/carbon/human/has_active_hand()
+	var/obj/item/organ/limb/L
+	if(hand)
+		L = get_organ("l_arm")
+	else
+		L = get_organ("r_arm")
+	if(L)
+		if(L.state_flags & ORGAN_MISSING)
+			return 0
+	return 1

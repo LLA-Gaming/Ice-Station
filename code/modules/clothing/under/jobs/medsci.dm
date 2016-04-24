@@ -18,6 +18,7 @@
 	item_color = "rdwhimsy"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 	can_roll = 1
+	rolled_mask = "shortsleeve"
 
 /obj/item/clothing/under/rank/research_director/ema
 	desc = "This is amazing! Just FEEL the power of science flowing through you!"
@@ -26,6 +27,7 @@
 	item_state = "rdema"
 	item_color = "rdema"
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	arm_mask = "shortsleeve"
 
 /obj/item/clothing/under/rank/scientist
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has markings that denote the wearer as a scientist."
@@ -90,6 +92,7 @@
 	permeability_coefficient = 0.50
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
 	fitted = 0
+	arm_mask = "dress"
 
 
 /obj/item/clothing/under/rank/medical
@@ -108,6 +111,7 @@
 	icon_state = "scrubsblue"
 	item_color = "scrubsblue"
 	can_roll = 0
+	arm_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/rank/medical/green
@@ -116,6 +120,7 @@
 	icon_state = "scrubsgreen"
 	item_color = "scrubsgreen"
 	can_roll = 0
+	arm_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/rank/medical/purple
@@ -124,6 +129,7 @@
 	icon_state = "scrubspurple"
 	item_color = "scrubspurple"
 	can_roll = 0
+	arm_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/rank/therapist

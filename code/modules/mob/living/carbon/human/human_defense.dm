@@ -127,6 +127,8 @@ emp_act
 
 	var/hit_area = parse_zone(affecting.name)
 
+	if(affecting && !affecting.can_hit())
+		user << "<span class='danger'>You fail to hit [src] with [I] because their [hit_area] is missing!</span>"
 	if(user != src)
 		//user.do_attack_animation(src)
 		if(check_shields(I.force, "the [I.name]"))

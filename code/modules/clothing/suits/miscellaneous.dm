@@ -74,6 +74,7 @@
 	icon_state = "justice"
 	item_state = "justice"
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	arm_mask = "none"
 
 
 /obj/item/clothing/suit/judgerobe
@@ -147,6 +148,7 @@
 	item_state = "monkeysuit"
 	body_parts_covered = CHEST|ARMS|GROIN|LEGS|FEET|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	arm_mask = "none"
 
 
 /obj/item/clothing/suit/holidaypriest
@@ -246,6 +248,7 @@
 	item_state = "xenos_helm"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	arm_mask = "none"
 
 /obj/item/clothing/suit/billydonka
 	name = "candyman vest"
@@ -263,12 +266,14 @@
 	allowed = list(/obj/item/weapon/gun/energy,/obj/item/weapon/reagent_containers/spray/pepper,/obj/item/weapon/gun/projectile,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/device/flashlight/seclite)
 	action_button_name = "Toggle Wings"
 	var/wings = 0
+	arm_mask = "full"
 
 /obj/item/clothing/suit/owlwings/griffinwings
 	name = "griffon cloak"
 	desc = "A plush white cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive your captives mad."
 	icon_state = "griffin_wings"
 	item_state = "griffin_wings"
+	arm_mask = "full"
 
 /obj/item/clothing/suit/owlwings/ui_action_click()
 	..()
