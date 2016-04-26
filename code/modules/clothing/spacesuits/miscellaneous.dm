@@ -51,6 +51,7 @@
 	desc = "An old, NASA Centcom branch designed, dark red Space suit."
 	slowdown = 1
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/multitool)
+	arm_mask = "none"
 
 
 //Space santa outfit suit
@@ -68,6 +69,7 @@
 	slowdown = 0
 	flags = STOPSPRESSUREDMAGE
 	allowed = list(/obj/item) //for stuffing exta special presents
+	arm_mask = "none"
 
 
 //Space pirate outfit

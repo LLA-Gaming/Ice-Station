@@ -11,6 +11,7 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = CHEST|GROIN
 	allowed = list(/obj/item/weapon/reagent_containers/spray/plantbgone,/obj/item/device/analyzer/plant_analyzer,/obj/item/seeds,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/minihoe)
+	arm_mask = "full"
 
 //Captain
 /obj/item/clothing/suit/captunic
@@ -88,6 +89,7 @@
 	item_state = "hazard"
 	blood_overlay_type = "armor"
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/emergency_oxygen,/obj/item/device/t_scanner,)
+	arm_mask = "full"
 
 //Lawyer
 /obj/item/clothing/suit/lawyer/bluejacket
@@ -162,4 +164,5 @@
 	body_parts_covered = CHEST|ARMS
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/emergency_oxygen,/obj/item/device/t_scanner,)
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	arm_mask = "jumpsuit"
 

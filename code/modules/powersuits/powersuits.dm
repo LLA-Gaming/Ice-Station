@@ -8,6 +8,7 @@
 	heavy = 1
 	unacidable = 1
 	anchored = 1
+	arm_mask = "none"
 	var/model_name = "standard"
 	var/powered = 0
 	var/s_busy = 0

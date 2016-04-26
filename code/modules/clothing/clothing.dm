@@ -342,11 +342,13 @@ atom/proc/generate_bangs(index,t_color,icon)
 		src.item_color = initial(item_color)
 		src.item_color = src.suit_color //colored jumpsuits are shit and break without this
 		usr << "You put your arms through the sleeves and zip up the jumpsuit."
+		arm_mask = initial(arm_mask)
 		src.rolled_down = 1
 	else
 		src.item_color += "_d"
 		usr << "You unzip and roll down the jumpsuit."
 		src.rolled_down = 2
+		arm_mask = rolled_mask
 	usr.update_inv_w_uniform()
 	..()
 

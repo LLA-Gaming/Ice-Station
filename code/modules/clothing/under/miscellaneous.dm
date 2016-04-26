@@ -250,6 +250,7 @@
 	item_color = "schoolgirl"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = 0
+	arm_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/schoolgirl/red
@@ -357,6 +358,7 @@
 	item_color = "sundress"
 	body_parts_covered = CHEST|GROIN
 	fitted = 0
+	arm_mask = "dress"
 
 
 /obj/item/clothing/under/captainformal
@@ -399,6 +401,7 @@
 	item_state = "wcoat"
 	item_color = "black_tango"
 	fitted = 0
+	arm_mask = "dress"
 
 
 /obj/item/clothing/under/maid
@@ -409,6 +412,7 @@
 	item_color = "maid"
 	body_parts_covered = CHEST|GROIN
 	fitted = 0
+	arm_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/janimaid
@@ -430,6 +434,7 @@
 	gender = PLURAL
 	body_parts_covered = GROIN|LEGS
 	fitted = 0
+	arm_mask = "full"
 
 
 /obj/item/clothing/under/trackpants
@@ -441,6 +446,7 @@
 	gender = PLURAL
 	body_parts_covered = GROIN|LEGS
 	fitted = 0
+	arm_mask = "full"
 
 
 /obj/item/clothing/under/khaki
@@ -452,6 +458,7 @@
 	gender = PLURAL
 	body_parts_covered = GROIN|LEGS
 	fitted = 0
+	arm_mask = "full"
 
 
 /obj/item/clothing/under/camo
@@ -463,6 +470,7 @@
 	gender = PLURAL
 	body_parts_covered = GROIN|LEGS
 	fitted = 0
+	arm_mask = "full"
 
 /obj/item/clothing/under/ntwork
 	name = "work jumpsuit"
@@ -501,3 +509,4 @@
 	icon_state = "femalebusiness"
 	item_state = "femalebusiness"
 	item_color = "femalebusiness"
+	rolled_mask = "shortsleeve"

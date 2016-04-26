@@ -99,6 +99,15 @@
 					reagent_note += num2text(R.volume) + ") "
 			var/distance = get_dist(get_turf(A), starting) // Get the distance between the turf shot from and the mob we hit and use that for the calculations.
 			def_zone = ran_zone(def_zone, max(100-(7*distance), 5)) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
+
+			var/obj/item/organ/limb/affecting
+			if(ishuman(A))
+				var/mob/living/carbon/human/H = A
+				affecting = H.get_organ(check_zone(def_zone))
+			if(affecting && affecting.state_flags & ORGAN_MISSING)
+				M.visible_message("<span class='danger'>\a [src] wizzes past [M]!</span>", "<span class='userdanger'>\a [src] wizzes past you!</span>")
+				return 1 //No arm, no hit
+
 			if(silenced)
 				playsound(loc, hitsound, 5, 1, -1)
 				M << "<span class='userdanger'>You've been shot by \a [src] in \the [parse_zone(def_zone)]!</span>"

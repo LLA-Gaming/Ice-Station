@@ -49,6 +49,6 @@ BONUS
 						E.Destroy()
 					for(var/datum/disease/appendicitis/D in M.viruses)	//If they already have Appendicitis, Remove it
 						D.cure(1)
-			M.update_augments()
+			M.update_body()
 
 	return

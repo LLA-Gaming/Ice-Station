@@ -5,6 +5,11 @@
 	Otherwise pretty standard.
 */
 /mob/living/carbon/human/UnarmedAttack(var/atom/A, var/proximity)
+
+	if(!has_active_hand())
+		src << "<span class='notice'>You look at your stump and sigh.</span>"
+		return
+
 	var/obj/item/clothing/gloves/G = gloves // not typecast specifically enough in defines
 
 	// Special glove functions:

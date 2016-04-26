@@ -39,6 +39,7 @@
 	item_color = "detective"
 	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	can_roll = 1
+	rolled_mask = "shortsleeve"
 
 /obj/item/clothing/under/det/grey
 	name = "grey hard-worn suit"
@@ -47,6 +48,7 @@
 	item_state = "greydet"
 	item_color = "greydet"
 	can_roll = 1
+	rolled_mask = "shortsleeve"
 
 /*
  * Head of Security
@@ -88,6 +90,7 @@
 	icon_state = "officerblueclothes"
 	item_state = "officerblueclothes"
 	item_color = "officerblueclothes"
+	rolled_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/rank/head_of_security/navyblue
@@ -96,6 +99,7 @@
 	icon_state = "hosblueclothes"
 	item_state = "hosblueclothes"
 	item_color = "hosblueclothes"
+	rolled_mask = "shortsleeve"
 
 
 /obj/item/clothing/under/rank/warden/navyblue
@@ -104,3 +108,4 @@
 	icon_state = "wardenblueclothes"
 	item_state = "wardenblueclothes"
 	item_color = "wardenblueclothes"
+	rolled_mask = "shortsleeve"

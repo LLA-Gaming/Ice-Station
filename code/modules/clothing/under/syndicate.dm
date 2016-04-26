@@ -6,6 +6,7 @@
 	item_color = "syndicate"
 	has_sensor = 0
 	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	rolled_mask = "shortsleeve"
 
 /obj/item/clothing/under/syndicate/combat
 	name = "combat turtleneck"
@@ -17,6 +18,7 @@
 	icon_state = "tactifool"
 	item_state = "bl_suit"
 	item_color = "tactifool"
+	rolled_mask = "shortsleeve"
 
 
 

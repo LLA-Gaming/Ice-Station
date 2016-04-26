@@ -48,6 +48,8 @@
 	var/status = ORGAN_ORGANIC
 	var/bleeding = 0
 
+	var/state_flags = ORGAN_FINE
+
 	proc/slice(var/bleedprob,var/sharpness,var/armor) //This proc runs whenever a limb is attacked by a sharp weapon
 		if(owner && (owner.status_flags & GODMODE))	return 0	//godmode
 		if(status != ORGAN_ORGANIC)
@@ -241,3 +243,7 @@
 		else			return name
 
 
+/obj/item/organ/limb/proc/can_hit()
+	if(state_flags & ORGAN_MISSING)
+		return 0
+	return 1

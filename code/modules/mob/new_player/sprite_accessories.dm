@@ -41,6 +41,7 @@
 	var/icon_state		//the icon_state of the accessory
 	var/name			//the preview name of the accessory
 	var/gender = NEUTER	//Determines if the accessory will be skipped or included in random hair generations
+	var/arm_mask = "shortsleeve"
 
 //////////////////////
 // Hair Definitions //
@@ -899,6 +900,7 @@
 	name = "Nude"
 	icon_state = null
 	gender = NEUTER
+	arm_mask = "full"
 
 /datum/sprite_accessory/undershirt/shirt_white
 	name = "White Shirt"
@@ -919,21 +921,25 @@
 	name = "White Tank Top"
 	icon_state = "tank_white"
 	gender = NEUTER
+	arm_mask = "full"
 
 /datum/sprite_accessory/undershirt/tank_black
 	name = "Black Tank Top"
 	icon_state = "tank_black"
 	gender = NEUTER
+	arm_mask = "full"
 
 /datum/sprite_accessory/undershirt/tank_grey
 	name = "Grey Tank Top"
 	icon_state = "tank_grey"
 	gender = NEUTER
+	arm_mask = "full"
 
 /datum/sprite_accessory/undershirt/female_midriff
 	name = "Midriff Tank Top"
 	icon_state = "tank_midriff"
 	gender = FEMALE
+	arm_mask = "full"
 
 /datum/sprite_accessory/undershirt/lover
 	name = "Lover shirt"
@@ -979,26 +985,31 @@
 	name = "White Short-sleeved Shirt"
 	icon_state = "whiteshortsleeve"
 	gender = NEUTER
+	arm_mask = "shortersleeve"
 
 /datum/sprite_accessory/undershirt/purpleshortsleeve
 	name = "Purple Short-sleeved Shirt"
 	icon_state = "purpleshortsleeve"
 	gender = NEUTER
+	arm_mask = "shortersleeve"
 
 /datum/sprite_accessory/undershirt/blueshortsleeve
 	name = "Blue Short-sleeved Shirt"
 	icon_state = "blueshortsleeve"
 	gender = NEUTER
+	arm_mask = "shortersleeve"
 
 /datum/sprite_accessory/undershirt/greenshortsleeve
 	name = "Green Short-sleeved Shirt"
 	icon_state = "greenshortsleeve"
 	gender = NEUTER
+	arm_mask = "shortersleeve"
 
 /datum/sprite_accessory/undershirt/blackshortsleeve
 	name = "Black Short-sleeved Shirt"
 	icon_state = "blackshortsleeve"
 	gender = NEUTER
+	arm_mask = "shortersleeve"
 
 /datum/sprite_accessory/undershirt/blueshirt
 	name = "Blue T-Shirt"
@@ -1114,6 +1125,7 @@
 	name = "Red Tank Top"
 	icon_state = "tank_red"
 	gender = NEUTER
+	arm_mask = "full"
 
 /datum/sprite_accessory/undershirt/greenshirt
 	name = "Green Shirt"
@@ -1144,6 +1156,7 @@
 	name = "Striped Tank Top"
 	icon_state = "tank_stripes"
 	gender = NEUTER
+	arm_mask = "full"
 
 /datum/sprite_accessory/undershirt/clownshirt
 	name = "Clown Shirt"
