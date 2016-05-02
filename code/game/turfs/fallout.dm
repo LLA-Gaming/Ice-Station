@@ -3,7 +3,7 @@
 		fallout/
 			icon = 'icons/turf/fallout_floors.dmi'
 
-		airless/fallout
+		surface/fallout
 			icon = 'icons/turf/fallout_floors.dmi'
 
 		bluegrid/fallout

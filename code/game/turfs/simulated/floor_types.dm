@@ -1,8 +1,11 @@
-/turf/simulated/floor/airless
-	icon_state = "floor"
-	name = "airless floor"
-	gasses = list(OXYGEN = 0.01, NITROGEN = 0.01)
-	temperature = TCMB
+/turf/simulated/floor/surface
+	name = "surface floor"
+	icon_state = "snowfloor"
+
+	gasses = list(OXYGEN = MOLES_O2STANDARD, NITROGEN = MOLES_N2STANDARD)
+	temperature = TN13C
+	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
+	heat_capacity = 700000
 
 	New()
 		..()
@@ -88,11 +91,14 @@
 	floor_tile = null
 	intact = 0
 
-/turf/simulated/floor/plating/airless
-	icon_state = "plating"
-	name = "airless plating"
-	gasses = list(OXYGEN = 0.01, NITROGEN = 0.01)
-	temperature = TCMB
+/turf/simulated/floor/plating/surface
+	name = "surface plating"
+	icon_state = "snowplating"
+
+	gasses = list(OXYGEN = MOLES_O2STANDARD, NITROGEN = MOLES_N2STANDARD)
+	temperature = TN13C
+	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
+	heat_capacity = 700000
 
 	New()
 		..()
