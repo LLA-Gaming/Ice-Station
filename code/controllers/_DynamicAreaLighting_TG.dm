@@ -271,10 +271,10 @@ turf/space/build_lighting_area(var/tag,var/level)
 	return A
 
 // obvious copy pasta of the above code
-turf/surf/lighting_tag(var/level)
+turf/surface/lighting_tag(var/level)
 	var/area/A = loc
 	return A.tagbase + "sd_L_space"
-turf/surf/build_lighting_area(var/tag,var/level)
+turf/surface/build_lighting_area(var/tag,var/level)
 	var/area/A = ..(tag,4)
 	A.lighting_space = 1
 	A.SetLightLevel(4)
