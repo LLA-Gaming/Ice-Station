@@ -145,7 +145,7 @@ RCD
 		if(!proximity) return 0
 		if(disabled && !isrobot(user))
 			return 0
-		if(istype(A,/area/shuttle)||istype(A,/turf/space/transit))
+		if(istype(A,/area/shuttle)||istype(A,/turf/space/transit)||istype(A, /turf/surface))
 			return 0
 		if(!(istype(A, /turf) || istype(A, /obj/machinery/door/airlock)))
 			return 0
@@ -286,7 +286,7 @@ RCD
 	afterattack(atom/A, mob/user, proximity)
 		if(!proximity)	return 0
 
-		if(istype(A,/area/shuttle)||istype(A,/turf/space/transit))
+		if(istype(A,/area/shuttle)||istype(A,/turf/space/transit)||istype(A, /turf/surface))
 			return 0
 		if(!(istype(A, /turf) || istype(A, /obj/machinery/door/airlock)))
 			return 0

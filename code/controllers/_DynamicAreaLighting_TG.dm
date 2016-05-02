@@ -210,6 +210,9 @@ turf
 turf/space
 	lighting_lumcount = 4		//starlight
 
+turf/surface
+	lighting_lumcount = 7		//sunlight
+
 turf/proc/update_lumcount(amount)
 	lighting_lumcount += amount
 	if(!lighting_changed)
@@ -261,6 +264,17 @@ turf/space/lighting_tag(var/level)
 	var/area/A = loc
 	return A.tagbase + "sd_L_space"
 turf/space/build_lighting_area(var/tag,var/level)
+	var/area/A = ..(tag,4)
+	A.lighting_space = 1
+	A.SetLightLevel(4)
+	A.icon_state = null
+	return A
+
+// obvious copy pasta of the above code
+turf/surf/lighting_tag(var/level)
+	var/area/A = loc
+	return A.tagbase + "sd_L_space"
+turf/surf/build_lighting_area(var/tag,var/level)
 	var/area/A = ..(tag,4)
 	A.lighting_space = 1
 	A.SetLightLevel(4)

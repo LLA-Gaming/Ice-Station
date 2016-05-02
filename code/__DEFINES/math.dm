@@ -6,6 +6,7 @@
 //atmos
 #define R_IDEAL_GAS_EQUATION	8.31	//kPa*L/(K*mol)
 #define ONE_ATMOSPHERE			101.325	//kPa
+#define TN13C					260		// -13degC
 #define T0C						273.15	// 0degC
 #define T20C					293.15	// 20degC
 #define TCMB					2.7		// -270.3degC

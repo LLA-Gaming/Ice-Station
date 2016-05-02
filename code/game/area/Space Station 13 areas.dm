@@ -21,7 +21,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/poweralm = 1
 	var/party = null
 	level = null
-	name = "Space"
+	name = "Surface"
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "unknown"
 	layer = 10
@@ -42,7 +42,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/used_light = 0
 	var/used_environ = 0
 
-	var/has_gravity = 0
+	var/has_gravity = 1
 
 	var/no_air = null
 	var/area/master				// master area used for power calcluations
@@ -120,6 +120,15 @@ proc/process_ghost_teleport_locs()
 	icon_state = "start"
 
 /area/space
+	requires_power = 1
+	always_unpowered = 1
+	lighting_use_dynamic = 0
+	power_light = 0
+	power_equip = 0
+	power_environ = 0
+	ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg',)
+
+/area/surface
 	requires_power = 1
 	always_unpowered = 1
 	lighting_use_dynamic = 0
