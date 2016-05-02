@@ -9,6 +9,20 @@
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
 	heat_capacity = 700000
 
+	var/depth = 1
+
+	examine()
+		..()
+		switch(depth)
+			if(1 to 2)
+				usr << "This snow looks shallow."
+			if(3 to 4)
+				usr << "This snow looks to be about knee-height."
+			if(5 to 6)
+				usr << "This snow looks to be about waist-height."
+			if(7 to 8)
+				usr << "This snow looks to be about human-height."
+
 /turf/surface/New()
 	..()
 	if(!istype(src, /turf/surface/transit))

@@ -95,6 +95,8 @@
 	if(health <= 0) // if damaged, the slime moves twice as slow
 		tally *= 2
 
+	tally += ApplyGeneralMovementDelays()
+
 	return tally + config.slime_delay
 
 /mob/living/carbon/slime/Bump(atom/movable/AM as mob|obj, yes)

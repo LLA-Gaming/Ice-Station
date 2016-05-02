@@ -12,4 +12,6 @@
 
 	tally = speed
 
+	tally += ApplyGeneralMovementDelays()
+
 	return tally+config.robot_delay

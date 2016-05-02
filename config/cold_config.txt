@@ -1,0 +1,2 @@
+[Cold]
+snow_slowdown_factor 1.4

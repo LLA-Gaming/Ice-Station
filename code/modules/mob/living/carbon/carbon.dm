@@ -19,6 +19,7 @@
 	. = 0
 	if(legcuffed)
 		. += legcuffed.slowdown
+	. += ApplyGeneralMovementDelays()
 
 /mob/living/carbon/relaymove(var/mob/user, direction)
 	if(user in src.stomach_contents)

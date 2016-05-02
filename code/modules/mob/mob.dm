@@ -92,6 +92,15 @@ var/next_mob_id = 0
 /mob/proc/movement_delay()
 	return 0
 
+/mob/proc/ApplyGeneralMovementDelays()
+	var/tally = 0
+
+	if(istype(loc, /turf/surface))
+		var/turf/surface/snow = loc
+		tally += snow.depth ** cold_config.snow_slowdown_factor
+
+	return tally
+
 /mob/proc/Life()
 	return
 
