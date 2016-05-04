@@ -188,6 +188,8 @@ Please contact me on #coderbus IRC. ~Carnie x
 /mob/living/carbon/human/update_mutations()
 	remove_overlay(MUTATIONS_LAYER)
 
+	update_body()
+
 	var/list/standing	= list()
 
 	var/g = (gender == FEMALE) ? "f" : "m"
