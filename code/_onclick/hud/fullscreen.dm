@@ -103,6 +103,14 @@
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "druggy"
 
+/* If one day we return to this...fingers crossed
+/obj/screen/fullscreen/snowing
+	icon = 'icons/effects/weather2.dmi'
+	screen_loc = "CENTER-7,CENTER-7"
+	icon_state = "snow"
+	plane = -1
+*/
+
 #undef FULLSCREEN_LAYER
 #undef BLIND_LAYER
 #undef DAMAGE_LAYER

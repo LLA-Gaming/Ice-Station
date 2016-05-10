@@ -6,17 +6,20 @@
 
 	setup()
 		name = "weather"
-		schedule_interval = PROCESS_DEFAULT_SCHEDULE_INTERVAL
+		schedule_interval = 20
 		for(var/path in typesof(/datum/weather) - /datum/weather)
 			weather_types += path
 
 	doWork()
+		if(!length(weather_types))
+			kill()
+			return 1
+
 		if(!next_weather)
 			next_weather = world.time + rand(interval_min, interval_max)
 
-		if(!length(weather_types))
-			kill()
-			return
+		if(world.time < next_weather)
+			return 1
 
 		if(CURRENT_WEATHER)
 			setLastTask("process()", "[CURRENT_WEATHER.type]")

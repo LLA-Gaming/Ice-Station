@@ -126,7 +126,9 @@ proc/process_ghost_teleport_locs()
 	power_light = 0
 	power_equip = 0
 	power_environ = 0
-	ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg',)
+	ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg')
+
+var/global/area/THE_SURFACE
 
 /area/surface
 	requires_power = 1
@@ -135,9 +137,12 @@ proc/process_ghost_teleport_locs()
 	power_light = 0
 	power_equip = 0
 	power_environ = 0
-	ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg',)
+	ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg')
 
+	New()
+		..()
 
+		THE_SURFACE = src
 
 //These are shuttle areas, they must contain two areas in a subgroup if you want to move a shuttle from one
 //place to another. Look at escape shuttle for example.

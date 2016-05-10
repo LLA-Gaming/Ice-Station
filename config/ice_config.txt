@@ -1,2 +1,2 @@
-[Cold]
+[Ice]
 snow_slowdown_factor 1.4

@@ -28,6 +28,10 @@ var/global/datum/weather/CURRENT_WEATHER
 		return 0
 
 	proc/Process()
+		if(!current_stage)
+			current_stage = stages[1]
+			current_stage.OnStart()
+
 		if((current_stage.started + current_stage.duration) < world.time)
 			// No more stages left, end the weather
 			if((current_stage.stage_index + 1) > length(stages))
