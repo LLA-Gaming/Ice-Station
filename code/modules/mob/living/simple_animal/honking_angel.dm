@@ -201,7 +201,7 @@
 			return 0
 		var/turf/simulated/t = get_turf(src)
 
-		if (t.GetLightRange() >= 0.50)
+		if (t.get_lumcount() * 10 >= 0.50)
 			for(var/mob/M in viewers(src))
 				if (!istype(M, /mob/living) || M.stat == DEAD || M:blinded > 0)
 					continue
