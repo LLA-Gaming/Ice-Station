@@ -34,7 +34,7 @@
 				continue
 
 			//var/area/turf_area = get_area(T)
-			//if(turf_area.lighting_use_dynamic)
+			//if(turf_area.dynamic_lighting)
 			//	turf_area.SetDynamicLighting()
 
 			for(var/obj/machinery/light/L in T)
@@ -58,7 +58,7 @@
 		var/area/A = new()
 		A.name = template_name
 		//A.tagbase = "[A.type]_[md5(template_name)]"
-		A.lighting_use_dynamic = 1
+		A.dynamic_lighting = 1
 		A.requires_power = 1
 		A.generated = 1
 
