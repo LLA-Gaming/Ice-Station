@@ -1,8 +1,0 @@
-/*
-			   Weather System
-				~TheDracheX
-
-
-
-
-*/
