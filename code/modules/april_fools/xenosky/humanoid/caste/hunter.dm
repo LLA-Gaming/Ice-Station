@@ -48,7 +48,6 @@
 	. = -1		//hunters are sanic
 	. += ..()	//but they still need to slow down on stun
 
-
 //Hunter verbs
 /*
 /mob/living/carbon/alien/beepsky/humanoid/hunter/verb/invis()
