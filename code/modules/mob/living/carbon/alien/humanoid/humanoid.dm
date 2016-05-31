@@ -14,6 +14,10 @@
 	real_name = name
 	..()
 
+
+/mob/living/carbon/alien/movement_delay()
+	. += ..()
+
 //This is fine, works the same as a human
 /mob/living/carbon/alien/humanoid/Bump(atom/movable/AM as mob|obj, yes)
 	if ((!( yes ) || now_pushing))

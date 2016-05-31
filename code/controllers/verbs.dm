@@ -19,7 +19,8 @@
 	return
 
 
-/client/proc/debug_controller(controller in list("Process Scheduler","Ticker","Garbage","Air","Jobs","Sun","Radio","Supply Shuttle","Emergency Shuttle","Configuration","pAI", "Cameras", "Events", "Virtual Reality","Firedome", "Pod Configuration", "Templates", "Template Config", "Space Grid"))
+/client/proc/debug_controller(controller in list("Process Scheduler","Ticker","Garbage","Air","Jobs","Sun","Radio","Supply Shuttle","Emergency Shuttle","Configuration","pAI",
+												 "Cameras", "Events", "Virtual Reality","Firedome", "Pod Configuration", "Templates", "Template Config", "Space Grid", "Ice Config"))
 	set category = "Debug"
 	set name = "Debug Controller"
 	set desc = "Debug the various periodic loop controllers for the game (be careful!)"
@@ -79,6 +80,8 @@
 			debug_variables(template_config)
 		if("Space Grid")
 			debug_variables(space_grid)
+		if("Ice Config")
+			debug_variables(ice_config)
 
 	message_admins("Admin [key_name_admin(usr)] is debugging the [controller] controller.")
 	return

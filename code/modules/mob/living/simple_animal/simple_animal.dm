@@ -444,6 +444,7 @@
 	var/tally = 0 //Incase I need to add stuff other than "speed" later
 
 	tally = speed
+	tally += ApplyGeneralMovementDelays()
 
 	return tally+config.animal_delay
 
