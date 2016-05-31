@@ -25,14 +25,13 @@ var/global/list/Z1_SNOW_TURFS = list()
 			Z1_SURFACE_TURFS += src
 	update_sunlight()
 
-/turf/surface/proc/update_sunlight()
-	for(var/t in RANGE_TURFS(1,src))
-		if(istype(t,/turf/simulated))
-			set_light(3)
-			return
-	if(light)
-		set_light(0)
-
+	proc/update_sunlight()
+		for(var/t in RANGE_TURFS(1,src))
+			if(istype(t,/turf/simulated))
+				set_light(3)
+				return
+		if(light)
+			set_light(0)
 
 	attack_paw(mob/user as mob)
 		return src.attack_hand(user)
