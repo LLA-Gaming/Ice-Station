@@ -2,7 +2,7 @@
 * All ship related stuff goes here.
 */
 
-/datum/configuration/var/mycenae_starts_at_centcom = 0
+/datum/legacy_configuration/var/mycenae_starts_at_centcom = 0
 
 /area/security/perseus/mycenaeiii
 	name = "Perseus Ship: The Mycenae"

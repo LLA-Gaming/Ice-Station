@@ -1,6 +1,6 @@
-var/datum/space_exploration_config/mining/mining_config
+var/datum/configuration/mining/mining_config
 
-/datum/space_exploration_config/mining
+/datum/configuration/mining
 	category = "Mining"
 
 	// High chances

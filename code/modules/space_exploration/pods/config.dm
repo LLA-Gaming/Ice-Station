@@ -1,6 +1,6 @@
-var/datum/space_exploration_config/pod/pod_config
+var/datum/configuration/pod/pod_config
 
-/datum/space_exploration_config/pod
+/datum/configuration/pod
 	category = "Pod"
 
 	var/damage_notice_cooldown

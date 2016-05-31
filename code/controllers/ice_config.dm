@@ -1,6 +1,6 @@
-var/datum/space_exploration_config/ice/ice_config = new()
+var/datum/configuration/ice/ice_config = new()
 
-/datum/space_exploration_config/ice
+/datum/configuration/ice
 	category = "Ice"
 	file = "config/ice_config.txt"
 

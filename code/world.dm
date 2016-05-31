@@ -290,7 +290,7 @@ var/list/TOPIC_PREV_CLIENT_LIST = list()
 	join_motd = file2text("config/motd.txt")
 
 /world/proc/load_configuration()
-	config = new /datum/configuration()
+	config = new /datum/legacy_configuration()
 	config.load("config/config.txt")
 	config.load("config/game_options.txt","game_options")
 	config.loadsql("config/dbconfig.txt")

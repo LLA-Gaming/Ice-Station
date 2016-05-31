@@ -1,10 +1,10 @@
-/datum/space_exploration_config
+/datum/configuration
 	var/category = 0
 	var/file = "config/space_exploration_config.txt"
 
 	New()
 		..()
-		var/list/values = GetSpaceExplorationConfigValues(category)
+		var/list/values = GetConfigValues(category)
 		for(var/val in values)
 			if(hasvar(src, val))
 				var/value
@@ -16,11 +16,11 @@
 
 		PostInit()
 
-	// Used for special variable handling, etc.
+	// Used for special variable handling, etc. for example: see space_exploration/templates/config.dm @ L:15
 	proc/PostInit()
 		return 0
 
-	proc/GetSpaceExplorationConfigFromCategory()
+	proc/GetConfigFromCategory()
 		if(!category)
 			return 0
 
@@ -44,11 +44,11 @@
 
 		return lines
 
-	proc/GetSpaceExplorationConfigValues()
+	proc/GetConfigValues()
 		if(!category)
 			return 0
 
-		var/list/lines = GetSpaceExplorationConfigFromCategory(category)
+		var/list/lines = GetConfigFromCategory(category)
 		var/list/values = list()
 
 		for(var/line in lines)

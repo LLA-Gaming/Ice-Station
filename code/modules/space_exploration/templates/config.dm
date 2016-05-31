@@ -1,6 +1,6 @@
-var/datum/space_exploration_config/template/template_config
+var/datum/configuration/template/template_config
 
-/datum/space_exploration_config/template
+/datum/configuration/template
 	category = "Template"
 	var/place_amount_min = 1
 	var/place_amount_max = 3
