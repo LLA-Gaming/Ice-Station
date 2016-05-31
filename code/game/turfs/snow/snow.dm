@@ -14,6 +14,15 @@
 	if(!istype(src, /turf/surface/transit))
 		if(prob(20))
 			icon_state = "snow[rand(0,12)]"
+	update_sunlight()
+
+/turf/surface/proc/update_sunlight()
+	for(var/t in RANGE_TURFS(1,src))
+		if(istype(t,/turf/simulated))
+			set_light(3)
+			return
+	if(light)
+		set_light(0)
 
 /turf/surface/attack_paw(mob/user as mob)
 	return src.attack_hand(user)
