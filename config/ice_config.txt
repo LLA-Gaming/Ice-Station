@@ -1,4 +1,3 @@
 [Ice]
 snow_slowdown_factor 1.4
-hour_duration 100
-hours_in_day 24
+sunlight_intensity 3

@@ -28,7 +28,7 @@ var/global/list/Z1_SNOW_TURFS = list()
 	proc/update_sunlight()
 		for(var/t in RANGE_TURFS(1,src))
 			if(istype(t,/turf/simulated))
-				set_light(3)
+				set_light(ice_config.sunlight_intensity)
 				return
 		if(light)
 			set_light(0)
