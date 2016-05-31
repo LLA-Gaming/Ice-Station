@@ -8,7 +8,6 @@ var/global/list/Z1_SNOW_TURFS = list()
 	name = "surface"
 	icon_state = "snow0"
 	intact = 0
-	plane = -2
 
 	gasses = list(OXYGEN = MOLES_O2STANDARD, NITROGEN = MOLES_N2STANDARD)
 	temperature = TN13C
@@ -24,6 +23,16 @@ var/global/list/Z1_SNOW_TURFS = list()
 		update_icon()
 		if(z == 1)
 			Z1_SURFACE_TURFS += src
+	update_sunlight()
+
+/turf/surface/proc/update_sunlight()
+	for(var/t in RANGE_TURFS(1,src))
+		if(istype(t,/turf/simulated))
+			set_light(3)
+			return
+	if(light)
+		set_light(0)
+
 
 	attack_paw(mob/user as mob)
 		return src.attack_hand(user)
