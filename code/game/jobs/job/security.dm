@@ -1,6 +1,6 @@
 //Warden and regular officers add this result to their get_access()
 /datum/job/proc/check_config_for_sec_maint()
-	if(config.jobs_have_maint_access & SECURITY_HAS_MAINT_ACCESS)
+	if(game_options.security_has_maint_access)
 		return list(access_maint_tunnels)
 	return list()
 
@@ -266,7 +266,7 @@ var/list/sec_departments = list("Engineering", "Supply", "Medical", "Science", "
 				H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security(H), slot_w_uniform)
 				default_headset = /obj/item/device/radio/headset/headset_sec
 		var/teleport = 0
-		if(!config.sec_start_brig)
+		if(!game_options.sec_start_brig)
 			if(destination)
 				if(!ticker || ticker.current_state <= GAME_STATE_SETTING_UP)
 					teleport = 1

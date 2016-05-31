@@ -133,7 +133,7 @@ datum/preferences
 
 		dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Settings</a> "
 		dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Game Preferences</a> "
-		if(config.sql_enabled)
+		if(sql_config.sql_enabled)
 			dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>Faction Settings</a>"
 
 		if(!path)
@@ -186,7 +186,7 @@ datum/preferences
 
 				dat += "<table width='100%'><tr><td width='20%' valign='top'>"
 				dat += "<h3>Body</h3>"
-				if(config.mutant_races)
+				if(game_options.join_with_mutant_race)
 					dat += "<b>Mutant Race:</b><BR><a href='?_src_=prefs;preference=mutant_race;task=input'>[mutant_race]</a><BR>"
 				else
 					dat += "<b>Mutant Race:</b> Human<BR>"
@@ -240,7 +240,7 @@ datum/preferences
 				dat += "<b>Pull requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(toggles & CHAT_PULLR) ? "Yes" : "No"]</a><br>"
 				dat += "<b>Statpanel Info</b> <a href='?_src_=prefs;preference=statpanel'>[(toggles & STATPANEL) ? "Yes" : "No"]</a><br>"
 
-				if(config.allow_Metadata)
+				if(config.allow_metadata)
 					dat += "<b>OOC Notes:</b> <a href='?_src_=prefs;preference=metadata;task=input'> Edit </a><br>"
 
 				if(user.client)
@@ -263,7 +263,7 @@ datum/preferences
 				dat += "</td></tr></table>"
 
 			if(2)
-				if(!config.sql_enabled)
+				if(!sql_config.sql_enabled)
 					current_tab = 0
 					return
 
@@ -889,7 +889,7 @@ datum/preferences
 		if(be_random_name)
 			real_name = random_name(gender)
 
-		if(config.humans_need_surnames)
+		if(game_options.humans_need_surnames)
 			var/firstspace = findtext(real_name, " ")
 			var/name_length = length(real_name)
 			if(!firstspace)	//we need a surname
@@ -901,7 +901,7 @@ datum/preferences
 		character.name = character.real_name
 		if(character.dna)
 			character.dna.real_name = character.real_name
-			if(mutant_race != "human" && config.mutant_races)
+			if(mutant_race != "human" && game_options.join_with_mutant_race)
 				character.dna.mutantrace = mutant_race
 
 		character.gender = gender

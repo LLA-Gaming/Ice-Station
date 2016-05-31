@@ -5,7 +5,7 @@
 		stat = CONSCIOUS
 		return
 	var/CritStatus = 0
-	if(health <= config.health_threshold_crit)
+	if(health <= game_options.health_threshold_crit)
 		CritStatus = 1
 	var/total_burn	= 0
 	var/total_brute	= 0
@@ -14,12 +14,12 @@
 		total_burn	+= O.burn_dam
 	health = maxHealth - getOxyLoss() - getToxLoss() - getCloneLoss() - total_burn - total_brute
 	//TODO: fix husking
-	if( ((maxHealth - total_burn) < config.health_threshold_dead) && stat == DEAD )
+	if( ((maxHealth - total_burn) < game_options.health_threshold_dead) && stat == DEAD )
 		ChangeToHusk()
-	if((health > config.health_threshold_crit) && (CritStatus == 1))
+	if((health > game_options.health_threshold_crit) && (CritStatus == 1))
 		src.attack_log += text("\[[time_stamp()]\] <font color='red'>[key_name(src)] has left critical</font>")
 		log_attack("<font color='red'>[key_name(src)] has left critical</font>")
-	if((health <= config.health_threshold_crit) && (CritStatus == 0))
+	if((health <= game_options.health_threshold_crit) && (CritStatus == 0))
 		src.attack_log += text("\[[time_stamp()]\] <font color='red'>[key_name(src)] has entered critical</font>")
 		log_attack("<font color='red'>[key_name(src)] has entered critical</font>")
 	return

@@ -2,7 +2,7 @@ var/list/mentors = list()
 var/mentor_salt = 0
 
 /proc/LoadMentors(var/override = 0)
-	if(!config.sql_enabled || override || config.mentor_legacy_system)
+	if(!sql_config.sql_enabled || override || config.mentor_legacy_system)
 		var/list/lines = file2list("config/mentors.txt")
 		for(var/line in lines)
 			if(!length(line))

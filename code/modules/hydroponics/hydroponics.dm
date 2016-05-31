@@ -867,7 +867,7 @@ obj/machinery/hydroponics/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/machinery/hydroponics/parent = loc
 	var/make_podman = 0
 	var/mob/ghost
-	if(ckey && config.revival_pod_plants)
+	if(ckey && game_options.revival_pod_plants)
 		ghost = find_dead_player("[ckey]")
 		if(ismob(ghost))
 			if(istype(ghost,/mob/dead/observer))

@@ -1,4 +1,4 @@
-var/datum/configuration/mining/mining_config
+var/datum/configuration/mining/mining_config = new()
 
 /datum/configuration/mining
 	category = "Mining"

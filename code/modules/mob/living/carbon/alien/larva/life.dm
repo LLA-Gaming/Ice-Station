@@ -72,7 +72,7 @@
 		var/datum/gas_mixture/environment = loc.return_air()
 		var/datum/gas_mixture/breath
 		// HACK NEED CHANGING LATER
-		if(health <= config.health_threshold_crit)
+		if(health <= game_options.health_threshold_crit)
 			losebreath++
 
 		if(losebreath>0) //Suffocating so do not take a breath
@@ -229,7 +229,7 @@
 				return 1
 
 			//UNCONSCIOUS. NO-ONE IS HOME
-			if( (getOxyLoss() > 25) || (config.health_threshold_crit >= health) )
+			if( (getOxyLoss() > 25) || (game_options.health_threshold_crit >= health) )
 				//if( health <= 20 && prob(1) )
 				//	spawn(0)
 				//		emote("gasp")

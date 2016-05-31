@@ -1,4 +1,4 @@
-var/datum/configuration/pod/pod_config
+var/datum/configuration/pod/pod_config = new()
 
 /datum/configuration/pod
 	category = "Pod"

@@ -19,8 +19,8 @@
 	return
 
 
-/client/proc/debug_controller(controller in list("Process Scheduler","Ticker","Garbage","Air","Jobs","Sun","Radio","Supply Shuttle","Emergency Shuttle","Configuration","pAI",
-												 "Cameras", "Events", "Virtual Reality","Firedome", "Pod Configuration", "Templates", "Template Config", "Space Grid", "Ice Config"))
+/client/proc/debug_controller(controller in list("Process Scheduler","Configurations","Ticker","Garbage","Air","Jobs","Sun","Radio","Supply Shuttle","Emergency Shuttle","pAI",
+												 "Cameras", "Events", "Virtual Reality","Firedome", "Templates", "Space Grid"))
 	set category = "Debug"
 	set name = "Debug Controller"
 	set desc = "Debug the various periodic loop controllers for the game (be careful!)"
@@ -54,8 +54,14 @@
 		if("Emergency Shuttle")
 			debug_variables(emergency_shuttle)
 			feedback_add_details("admin_verb","DEmergency")
-		if("Configuration")
-			debug_variables(config)
+		if("Configurations")
+			var/list/D = list()
+			D["Cancel"] = "Cancel"
+			for(var/datum/configuration/C in global_configs)
+				D[C.category] = C
+			var/t = input(src, "Which config?") as null|anything in D
+			if(t && t != "Cancel")
+				debug_variables(D[t])
 			feedback_add_details("admin_verb","DConf")
 		if("pAI")
 			debug_variables(paiController)
@@ -72,16 +78,10 @@
 		if("Firedome")
 			debug_variables(firedome)
 			feedback_add_details("admin_verb", "FDevents")
-		if("Pod Configuration")
-			debug_variables(pod_config)
 		if("Templates")
 			debug_variables(template_controller)
-		if("Template Config")
-			debug_variables(template_config)
 		if("Space Grid")
 			debug_variables(space_grid)
-		if("Ice Config")
-			debug_variables(ice_config)
 
 	message_admins("Admin [key_name_admin(usr)] is debugging the [controller] controller.")
 	return

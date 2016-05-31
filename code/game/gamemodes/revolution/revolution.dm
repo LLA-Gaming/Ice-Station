@@ -66,7 +66,7 @@
 
 /datum/game_mode/revolution/pre_setup()
 
-	if(config.protect_roles_from_antagonist)
+	if(game_options.protect_roles_from_antagonist)
 		restricted_jobs += protected_jobs
 
 	var/head_check = 0
@@ -193,7 +193,7 @@
 //Checks if the round is over//
 ///////////////////////////////
 /datum/game_mode/revolution/check_finished()
-	if(config.continuous_round_rev)
+	if(game_options.continuous_round_rev)
 		if(finished != 0)
 			if(emergency_shuttle)
 				emergency_shuttle.always_fake_recall = 0

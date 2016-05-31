@@ -77,7 +77,7 @@
 		world << "<B>The OOC channel has been globally disabled!</B>"
 
 /proc/auto_toggle_ooc(var/on)
-	if(!config.ooc_during_round && ooc_allowed != on)
+	if(!game_options.ooc_during_round && ooc_allowed != on)
 		toggle_ooc()
 
 var/global/normal_ooc_colour = "#002eb8"

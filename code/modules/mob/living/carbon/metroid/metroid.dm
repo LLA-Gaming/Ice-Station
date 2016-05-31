@@ -97,7 +97,7 @@
 
 	tally += ApplyGeneralMovementDelays()
 
-	return tally + config.slime_delay
+	return tally + game_options.slime_delay
 
 /mob/living/carbon/slime/Bump(atom/movable/AM as mob|obj, yes)
 	if ((!(yes) || now_pushing))

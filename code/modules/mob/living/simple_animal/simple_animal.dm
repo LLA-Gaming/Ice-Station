@@ -446,7 +446,7 @@
 	tally = speed
 	tally += ApplyGeneralMovementDelays()
 
-	return tally+config.animal_delay
+	return tally+game_options.animal_delay
 
 /mob/living/simple_animal/Stat()
 	..()

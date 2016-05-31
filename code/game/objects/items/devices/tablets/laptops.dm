@@ -87,7 +87,7 @@
 		set src in oview(1)
 
 		//ghost interaction check
-		if(istype(usr,/mob/dead/observer) && config && !config.ghost_interaction)
+		if(istype(usr,/mob/dead/observer) && config && !game_options.ghost_interaction)
 			return
 
 		toggle_mount()

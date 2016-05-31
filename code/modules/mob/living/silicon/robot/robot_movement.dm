@@ -14,4 +14,4 @@
 
 	tally += ApplyGeneralMovementDelays()
 
-	return tally+config.robot_delay
+	return tally+game_options.robot_delay

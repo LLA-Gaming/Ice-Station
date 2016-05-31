@@ -24,7 +24,7 @@
 	*/
 
 	proc/Populate()
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return 0
 
 		/******/
@@ -61,7 +61,7 @@
 			messages += list(sender, recipient, message)
 
 	proc/IsAdminParticipating()
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return 0
 
 		var/DBQuery/is_participating_qry = dbcon.NewQuery("SELECT admin_ckey FROM admin_conversations WHERE id = [id]")
@@ -78,12 +78,12 @@
 		return 1
 
 	proc/SetAdminParticipant(var/ckey = 0)
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return 0
 
 		if(IsAdminParticipating() || !ckey)	return
 
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return
 
 		participants += list("admin", ckey)
@@ -92,7 +92,7 @@
 		insert_into_database_qry.Execute()
 
 	proc/GetPlayerCkey()
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return 0
 
 		var/DBQuery/player_ckey_qry = dbcon.NewQuery("SELECT player_ckey FROM admin_conversations WHERE id = [id]")
@@ -112,7 +112,7 @@
 		if(!ckey || !message)
 			return
 
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return
 
 		var/DBQuery/pm_qry = dbcon.NewQuery("INSERT INTO admin_pm (conversation_id, message, sender_ckey, recipient_ckey, date) VALUES ('[id]', '[sanitizeSQL(message)]', '[sanitizeSQL(ckey)]', '[sanitizeSQL(recipient_ckey)]', Now())")
@@ -189,7 +189,7 @@
 
 					</tr>
 				"}
-	if(config.sql_enabled)
+	if(sql_config.sql_enabled)
 		for(var/datum/admin_conversation/A in GetCurrentAdminConversations())
 
 			dat += {"
@@ -213,7 +213,7 @@ var/list/CurrentAdminConversations = list()
 	if(!ckey || !message)
 		return 0
 
-	if(!config.sql_enabled)
+	if(!sql_config.sql_enabled)
 		return
 
 	var/round_id = text2num(GetCurrentRoundID())

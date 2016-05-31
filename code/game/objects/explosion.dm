@@ -38,7 +38,7 @@ proc/explosion(turf/epicenter, devastation_range, heavy_impact_range, light_impa
 		flame_range = min (MAX_EX_FLAME_RANGE, flame_range)
 
 	spawn(0)
-		if(config.use_recursive_explosions)
+		if(game_options.use_recursive_explosions)
 			devastation_range += 1	//Original code uses -1 as no explosion, this code uses 0 as no explosion and -1 would ruin everything
 			heavy_impact_range += 1
 			light_impact_range += 1

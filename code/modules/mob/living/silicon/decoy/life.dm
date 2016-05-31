@@ -2,7 +2,7 @@
 	if (src.stat == 2)
 		return
 	else
-		if (src.health <= config.health_threshold_dead && src.stat != 2)
+		if (src.health <= game_options.health_threshold_dead && src.stat != 2)
 			death()
 			return
 

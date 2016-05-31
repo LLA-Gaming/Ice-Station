@@ -79,7 +79,7 @@
 /* Initializers */
 /datum/ai_laws/malfunction/New()
 	..()
-	switch(config.default_laws) //We don't want people metagaming malf, do we?
+	switch(game_options.default_laws) //We don't want people metagaming malf, do we?
 		if(0)
 			add_inherent_law("You may not injure a human being or, through inaction, allow a human being to come to harm.")
 			add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")

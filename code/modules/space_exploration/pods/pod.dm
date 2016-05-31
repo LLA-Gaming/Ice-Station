@@ -60,10 +60,6 @@ var/list/pod_list = list()
 		seats = GetSeats()
 		pod_log = new(src)
 
-		// Should be fine if we initialize a global variable in here.
-		if(!pod_config)
-			pod_config = new()
-
 		spawn(0)
 			inertial_drift_iterator = new(list(src))
 			equalize_air_iterator = new(list(src))

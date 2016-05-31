@@ -6,3 +6,4 @@ var/datum/configuration/ice/ice_config = new()
 
 	var/snow_slowdown_factor
 	var/sunlight_intensity
+	var/instant_lighting

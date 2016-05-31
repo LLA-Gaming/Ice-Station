@@ -134,7 +134,7 @@ var/list/perseusMissions = list()
 */
 
 /proc/logPerseusMissions()
-	if(!config.sql_enabled)
+	if(!sql_config.sql_enabled)
 		return
 	establish_db_connection()
 	if(!dbcon.IsConnected())

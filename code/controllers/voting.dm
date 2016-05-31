@@ -66,7 +66,7 @@ datum/controller/vote
 			if(votes > greatest_votes)
 				greatest_votes = votes
 		//default-vote for everyone who didn't vote
-		if(!config.vote_no_default && choices.len)
+		if(!config.default_no_vote && choices.len)
 			var/non_voters = (clients.len - total_votes)
 			if(non_voters > 0)
 				if(mode == "restart")
@@ -157,7 +157,7 @@ datum/controller/vote
 
 	proc/submit_vote(var/vote)
 		if(mode)
-			if(config.vote_no_dead && usr.stat == DEAD && !usr.client.holder)
+			if(config.no_dead_vote && usr.stat == DEAD && !usr.client.holder)
 				return 0
 			if(!(usr.ckey in voted))
 				if(vote && 1<=vote && vote<=choices.len)
@@ -179,7 +179,7 @@ datum/controller/vote
 			switch(vote_type)
 				if("restart")	choices.Add("Restart Round","Continue Playing")
 				if("crewtransfer")	choices.Add("Crew Transfer","Continue Playing")
-				if("gamemode")	choices.Add(config.votable_modes)
+				if("gamemode")	choices.Add(gamemode_config.votable_modes)
 				if("custom")
 					question = html_encode(input(usr,"What is the vote for?") as text|null)
 					if(!question)	return 0

@@ -19,12 +19,6 @@
 
 	getHoliday()
 
-	if(!mining_config)
-		mining_config = new()
-
-	if(!template_config)
-		template_config = new()
-
 	if(!template_controller)
 		template_controller = new()
 
@@ -35,7 +29,7 @@
 
 /proc/setup_engineering()
 	var/area/mainengine = locate(/area/engine/engineering)
-	if(!config.random_engine)  //Enable this setup using the config option "randomize_engine_template"
+	if(!game_options.randomize_engine_template)  //Enable this setup using the config option "randomize_engine_template"
 		for(var/B in typesof(/area/engine/alternate))
 			var/template = locate(B)
 			for(var/C in template)

@@ -1,4 +1,4 @@
-var/datum/configuration/template/template_config
+var/datum/configuration/template/template_config = new()
 
 /datum/configuration/template
 	category = "Template"

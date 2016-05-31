@@ -33,7 +33,7 @@
 		. += (283.222 - bodytemperature) / 10 * 1.75
 
 	. += ..()
-	. += config.human_delay
+	. += game_options.human_delay
 
 /mob/living/carbon/human/Process_Spacemove(var/check_drift = 0)
 	//Can we act

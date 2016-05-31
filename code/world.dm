@@ -35,7 +35,6 @@
 
 	make_datum_references_lists()	//initialises global lists for referencing frequently used datums (so that we only ever do it once)
 
-	load_configuration()
 	load_mode()
 	load_motd()
 	load_admins()
@@ -56,13 +55,13 @@
 	LoadBans()
 	investigate_reset()
 
-	if(config && config.server_name != null && config.server_suffix && world.port > 0)
+	if(config && config.servername != null && config.serversuffix && world.port > 0)
 		// dumb and hardcoded but I don't care~
-		config.server_name += " #[(world.port % 1000) / 100]"
+		config.servername += " #[(world.port % 1000) / 100]"
 
 	timezoneOffset = text2num(time2text(0,"hh")) * 36000
 
-	if(config.sql_enabled)
+	if(sql_config.sql_enabled)
 		if(!setup_database_connection())
 			world.log << "Your server failed to establish a connection with the database."
 		else
@@ -138,10 +137,10 @@ var/list/TOPIC_PREV_CLIENT_LIST = list()
 		// Please add new status indexes under the old ones, for the server banner (until that gets reworked)
 		s["version"] = game_version
 		s["mode"] = master_mode
-		s["respawn"] = config ? abandon_allowed : 0
+		s["respawn"] = config ? config.respawn : 0
 		s["enter"] = enter_allowed
 		s["vote"] = config.allow_vote_mode
-		s["ai"] = config.allow_ai
+		s["ai"] = game_options.allow_ai
 		s["host"] = host ? host : null
 
 		var/admins = 0
@@ -289,18 +288,10 @@ var/list/TOPIC_PREV_CLIENT_LIST = list()
 /world/proc/load_motd()
 	join_motd = file2text("config/motd.txt")
 
-/world/proc/load_configuration()
-	config = new /datum/legacy_configuration()
-	config.load("config/config.txt")
-	config.load("config/game_options.txt","game_options")
-	config.loadsql("config/dbconfig.txt")
-	// apply some settings from config..
-	abandon_allowed = config.respawn
-
 /world/proc/update_world_name()
 	var/worldname = ""
-	if (config && config.server_name)
-		worldname += "[config.server_name]:"
+	if (config && config.servername)
+		worldname += "[config.servername]:"
 	worldname += station_name
 
 	world.name = worldname
@@ -308,8 +299,8 @@ var/list/TOPIC_PREV_CLIENT_LIST = list()
 /world/proc/update_status()
 	var/s = ""
 
-	if (config && config.server_name)
-		s += "<b>[config.server_name]</b> &#8212; "
+	if (config && config.servername)
+		s += "<b>[config.servername]</b> &#8212; "
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
@@ -330,12 +321,12 @@ var/list/TOPIC_PREV_CLIENT_LIST = list()
 	if (!enter_allowed)
 		features += "closed"
 
-	features += abandon_allowed ? "respawn" : "no respawn"
+	features += config.respawn ? "respawn" : "no respawn"
 
 	if (config && config.allow_vote_mode)
 		features += "vote"
 
-	if (config && config.allow_ai)
+	if (config && game_options.allow_ai)
 		features += "AI allowed"
 
 	var/n = 0
@@ -387,7 +378,7 @@ proc/setup_database_connection()
 		failed_db_connections = 0	//If this connection succeeded, reset the failed connections counter.
 	else
 		failed_db_connections++		//If it failed, increase the failed connections counter.
-		if(config.sql_enabled)
+		if(sql_config.sql_enabled)
 			world.log << "SQL error: " + dbcon.ErrorMsg()
 
 	return .

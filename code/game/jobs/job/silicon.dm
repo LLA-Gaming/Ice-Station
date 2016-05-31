@@ -16,7 +16,7 @@ AI
 	if(!H)	return 0
 
 /datum/job/ai/config_check()
-	if(config && config.allow_ai)
+	if(config && game_options.allow_ai)
 		return 1
 	return 0
 

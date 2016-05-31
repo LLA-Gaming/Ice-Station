@@ -193,7 +193,7 @@
 	if (station_captured && !to_nuke_or_not_to_nuke)
 		return 1
 	if (is_malf_ai_dead())
-		if(config.continuous_round_malf)
+		if(game_options.continuous_round_malf)
 			if(emergency_shuttle)
 				emergency_shuttle.always_fake_recall = 0
 			malf_mode_declared = 0

@@ -46,7 +46,7 @@ var/global/datum/controller/processScheduler/processScheduler
 
 /datum/controller/processScheduler/New()
 	..()
-	world.tick_lag = config.Ticklag
+	world.tick_lag = config.tick_lag
 
 	scheduler_sleep_interval = world.tick_lag
 

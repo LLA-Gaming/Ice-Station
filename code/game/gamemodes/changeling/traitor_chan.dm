@@ -23,15 +23,15 @@
 	return 1
 
 /datum/game_mode/traitor/changeling/pre_setup()
-	if(config.protect_roles_from_antagonist)
+	if(game_options.protect_roles_from_antagonist)
 		restricted_jobs += protected_jobs
 
 	var/list/datum/mind/possible_changelings = get_players_for_role(BE_CHANGELING)
 
 	var/num_changelings = 1
 
-	if(config.changeling_scaling_coeff)
-		num_changelings = Clamp(max(config.changeling_scaling_minimum, round((num_players())/((config.changeling_scaling_coeff * scale_modifier)))),1,round(num_players() / 2))
+	if(game_options.changeling_scaling_coeff)
+		num_changelings = Clamp(max(game_options.changeling_scaling_minimum, round((num_players())/((game_options.changeling_scaling_coeff * scale_modifier)))),1,round(num_players() / 2))
 	else
 		num_changelings = max(1, min(num_players(), changeling_amount))
 
@@ -64,7 +64,7 @@
 	if(changelings.len >= round(joined_player_list.len / 2)) //Caps number of latejoin antagonists. Basically changelings cannot out number crew
 		..()
 		return
-	if (prob(100/(config.changeling_scaling_coeff*2)))
+	if (prob(100/(game_options.changeling_scaling_coeff*2)))
 		if(character.client.prefs.be_special_gamemode & BE_CHANGELING)
 			if(!jobban_isbanned(character.client, "changeling") && !jobban_isbanned(character.client, "Syndicate"))
 				if(!(character.job in ticker.mode.restricted_jobs))

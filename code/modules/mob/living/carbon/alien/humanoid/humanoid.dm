@@ -45,7 +45,7 @@
 
 /mob/living/carbon/alien/humanoid/movement_delay()
 	. = ..()
-	. += move_delay_add + config.alien_delay	//move_delay_add is used to slow aliens with stuns
+	. += move_delay_add + game_options.alien_delay	//move_delay_add is used to slow aliens with stuns
 
 ///mob/living/carbon/alien/humanoid/bullet_act(var/obj/item/projectile/Proj) taken care of in living
 

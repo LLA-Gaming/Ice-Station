@@ -363,7 +363,7 @@
 	set category = "OOC"
 	set src in view()
 
-	if(config.allow_Metadata)
+	if(config.allow_metadata)
 		if(client)
 			usr << "[src]'s Metainfo:<br>[client.prefs.metadata]"
 		else

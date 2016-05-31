@@ -231,7 +231,7 @@
 		var/datum/gas_mixture/environment = loc.return_air()
 		var/datum/gas_mixture/breath
 		// HACK NEED CHANGING LATER
-		if(health <= config.health_threshold_crit)
+		if(health <= game_options.health_threshold_crit)
 			losebreath++
 		if(blood && blood.total_volume <= BLOODLOSS_CRIT)
 			losebreath++
@@ -326,7 +326,7 @@
 				failed_last_breath = 1
 				oxygen_alert = max(oxygen_alert, 1)
 				return 0
-			if(health >= config.health_threshold_crit)
+			if(health >= game_options.health_threshold_crit)
 				adjustOxyLoss(HUMAN_MAX_OXYLOSS)
 				failed_last_breath = 1
 			else
@@ -834,7 +834,7 @@
 			silent = 0
 		else				//ALIVE. LIGHTS ARE ON
 			updatehealth()	//TODO
-			if(health <= config.health_threshold_dead || !getorgan(/obj/item/organ/brain))
+			if(health <= game_options.health_threshold_dead || !getorgan(/obj/item/organ/brain))
 				death()
 				blinded = 1
 				silent = 0
@@ -842,7 +842,7 @@
 
 
 			//UNCONSCIOUS. NO-ONE IS HOME
-			if( (getOxyLoss() > 50) || (config.health_threshold_crit >= health) )
+			if( (getOxyLoss() > 50) || (game_options.health_threshold_crit >= health) )
 				Paralyse(3)
 
 				/* Done by handle_breath()
@@ -994,7 +994,7 @@
 
 		if(stat == UNCONSCIOUS)
 			//Critical damage passage overlay
-			if(health <= config.health_threshold_crit)
+			if(health <= game_options.health_threshold_crit)
 				var/image/I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "passage0")
 				I.blend_mode = BLEND_OVERLAY //damageoverlay is BLEND_MULTIPLY
 				var/severity = 0
@@ -1385,7 +1385,7 @@
 /mob/living/carbon/human/InCritical()
 	if(blood && (blood.total_volume <= BLOODLOSS_CRIT && stat == UNCONSCIOUS))
 		return 1
-	return (health <= config.health_threshold_crit && stat == UNCONSCIOUS)
+	return (health <= game_options.health_threshold_crit && stat == UNCONSCIOUS)
 
 #undef HUMAN_MAX_OXYLOSS
 #undef HUMAN_CRIT_MAX_OXYLOSS

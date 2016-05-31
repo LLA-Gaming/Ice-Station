@@ -34,13 +34,13 @@
 
 /datum/game_mode/traitor/pre_setup()
 
-	if(config.protect_roles_from_antagonist)
+	if(game_options.protect_roles_from_antagonist)
 		restricted_jobs += protected_jobs
 
 	var/num_traitors = 1
 
-	if(config.traitor_scaling_coeff)
-		num_traitors = Clamp(max(config.traitor_scaling_minimum, round((num_players())/((config.traitor_scaling_coeff * scale_modifier)))),1,round(num_players() / 2))
+	if(game_options.traitor_scaling_coeff)
+		num_traitors = Clamp(max(game_options.traitor_scaling_minimum, round((num_players())/((game_options.traitor_scaling_coeff * scale_modifier)))),1,round(num_players() / 2))
 	else
 		num_traitors = max(1, min(num_players(), traitors_possible))
 
@@ -79,7 +79,7 @@
 /datum/game_mode/traitor/make_antag_chance(var/mob/living/carbon/human/character) //Assigns traitor to latejoiners
 	if(traitors.len >= round(joined_player_list.len / 2)) //Caps number of latejoin antagonists. Basically traitors cannot out number crew
 		return
-	if (prob(100/(config.traitor_scaling_coeff * scale_modifier)))
+	if (prob(100/(game_options.traitor_scaling_coeff * scale_modifier)))
 		if(character.client.prefs.be_special_gamemode & BE_TRAITOR)
 			if(!jobban_isbanned(character.client, "traitor") && !jobban_isbanned(character.client, "Syndicate"))
 				if(!(character.job in ticker.mode.restricted_jobs))

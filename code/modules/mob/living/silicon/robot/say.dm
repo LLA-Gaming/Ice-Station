@@ -26,4 +26,4 @@
 	return "states, \"<span class = 'robot'>[text]</span>\"";
 
 /mob/living/silicon/robot/IsVocal()
-	return !config.silent_borg
+	return !game_options.silent_borg

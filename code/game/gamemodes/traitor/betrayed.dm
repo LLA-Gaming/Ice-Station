@@ -49,7 +49,7 @@
 	return 1
 
 /datum/game_mode/traitor/betrayed/check_finished()
-	if(config.continuous_round_betrayed)
+	if(game_options.continuous_round_betrayed)
 		return ..()
 	if(finished != 0)
 		return 1

@@ -53,7 +53,7 @@
 
 	tally += ApplyGeneralMovementDelays()
 
-	return tally+config.monkey_delay
+	return tally+game_options.monkey_delay
 
 /mob/living/carbon/monkey/Bump(atom/movable/AM as mob|obj, yes)
 	if ((!( yes ) || now_pushing))

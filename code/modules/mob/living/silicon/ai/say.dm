@@ -31,7 +31,7 @@
 	return "states, \"<span class = 'robot'>[text]</span>\"";
 
 /mob/living/silicon/ai/IsVocal()
-	return !config.silent_ai
+	return !game_options.silent_ai
 
 // Make sure that the code compiles with AI_VOX undefined
 #ifdef AI_VOX

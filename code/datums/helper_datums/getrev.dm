@@ -53,12 +53,12 @@ client/verb/showrevinfo()
 	set name = "Show Server Revision"
 	var/output = revdata.showinfo
 	output += "<b>Current Infomational Settings:</b><br>"
-	output += "Protect Authority Roles From Traitor: [config.protect_roles_from_antagonist]<br>"
-	output += "Allow Latejoin Antagonists: [config.allow_latejoin_antagonists]<br>"
-	if(config.show_game_type_odds)
+	output += "Protect Authority Roles From Traitor: [game_options.protect_roles_from_antagonist]<br>"
+	output += "Allow Latejoin Antagonists: [game_options.allow_latejoin_antagonists]<br>"
+	if(game_options.show_game_type_odds)
 		output += "<br><b>Game Type Odds:</b><br>"
-		for(var/i=1,i<=config.probabilities.len,i++)
-			var/p = config.probabilities[i]
-			output += "[p] [config.probabilities[p]]<br>"
+		for(var/i=1,i<=gamemode_config.probabilities.len,i++)
+			var/p = gamemode_config.probabilities[i]
+			output += "[p] [gamemode_config.probabilities[p]]<br>"
 	usr << browse(output,"window=revdata");
 	return

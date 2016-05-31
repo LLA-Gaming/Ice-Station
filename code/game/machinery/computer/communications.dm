@@ -611,8 +611,8 @@ var/perseusMissionCooldown = 3000
 /proc/call_shuttle_proc(var/mob/user, var/call_reason)
 	if ((!( ticker ) || emergency_shuttle.location))
 		return
-	if(world.time - round_start_time < config.shuttle_refuel_delay)
-		user << "The emergency shuttle is refueling. Please wait another [abs(round(((world.time - round_start_time) - config.shuttle_refuel_delay)/600))] minutes before trying again."
+	if(world.time - round_start_time < game_options.shuttle_refuel_delay)
+		user << "The emergency shuttle is refueling. Please wait another [abs(round(((world.time - round_start_time) - game_options.shuttle_refuel_delay)/600))] minutes before trying again."
 		return
 
 	if(emergency_shuttle.direction == -1)

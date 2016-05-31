@@ -494,7 +494,7 @@ datum/objective/absorb/check_completion()
 		return 0
 
 /proc/LogAntagMissions()
-	if(!config.sql_enabled)
+	if(!sql_config.sql_enabled)
 		return
 
 	establish_db_connection()

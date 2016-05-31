@@ -77,10 +77,10 @@ var/global/last_tick_duration = 0
 		src.hide_mode = 1
 	var/list/datum/game_mode/runnable_modes
 	if((master_mode=="random") || (master_mode=="secret"))
-		runnable_modes = config.get_runnable_modes()
+		runnable_modes = gamemode_config.get_runnable_modes()
 
 		if((master_mode=="secret") && (secret_force_mode != "secret"))
-			var/datum/game_mode/smode = config.pick_mode(secret_force_mode)
+			var/datum/game_mode/smode = gamemode_config.pick_mode(secret_force_mode)
 			if (!smode.can_start(1))
 				message_admins("\blue Unable to force secret [secret_force_mode]. [smode.required_enemies] eligible antagonists needed.", 1)
 			else
@@ -94,7 +94,7 @@ var/global/last_tick_duration = 0
 			src.mode = pickweight(runnable_modes)
 
 	else
-		src.mode = config.pick_mode(master_mode)
+		src.mode = gamemode_config.pick_mode(master_mode)
 		if (!src.mode.can_start())
 			world << "<B>Unable to start [mode.name].</B> Not enough players, [mode.required_players] players and [mode.required_enemies] eligible antagonists needed. Reverting to pre-game lobby."
 			del(mode)
@@ -175,7 +175,7 @@ var/global/last_tick_duration = 0
 		send2irc("Server", "Round just started with no admins online!")
 	auto_toggle_ooc(0) // Turn it off
 
-	if(config.sql_enabled)
+	if(sql_config.sql_enabled)
 		spawn(3000)
 			statistic_cycle() // Polls population totals regularly and stores them in an SQL DB
 	return 1
@@ -327,7 +327,7 @@ var/global/last_tick_duration = 0
 			spawn
 				declare_completion()
 				logPerseusMissions()
-				if(config.sql_enabled)
+				if(sql_config.sql_enabled)
 					LogAntagMissions()
 
 			spawn(50)

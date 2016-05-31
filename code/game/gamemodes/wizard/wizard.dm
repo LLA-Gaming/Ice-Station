@@ -182,7 +182,7 @@
 
 /datum/game_mode/wizard/check_finished()
 
-	if(config.continuous_round_wiz)
+	if(game_options.continuous_round_wiz)
 		return ..()
 
 	var/wizards_alive = 0

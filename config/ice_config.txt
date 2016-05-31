@@ -1,3 +1,4 @@
 [Ice]
 snow_slowdown_factor 1.4
 sunlight_intensity 3
+instant_lighting 0

@@ -60,7 +60,7 @@
 		diaryofmeanpeople << "\[[time_stamp()]]ATTACK: [text]"
 
 /proc/log_adminsay(text)
-	if (config.log_adminchat)
+	if (config.log_admin)
 		diary << "\[[time_stamp()]]ADMINSAY: [text]"
 
 /proc/log_adminwarn(text)

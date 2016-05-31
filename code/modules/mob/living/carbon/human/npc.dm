@@ -401,13 +401,13 @@ like humans only automated. expands upon the concept of simple_animal hostiles l
 		if("run")
 			if(drowsyness > 0)
 				move_delay += 6
-			move_delay += config.run_speed
+			move_delay += game_options.run_delay
 		if("walk")
 			move_delay += 1
 	move_delay += movement_delay()
 	move_delay += extra
 
-	if(config.Tickcomp)
+	if(config.tickcomp)
 		move_delay -= 1.3
 		var/tickcomp = (1 / (world.tick_lag)) * 1.3
 		move_delay = move_delay + tickcomp

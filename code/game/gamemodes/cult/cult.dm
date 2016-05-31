@@ -69,7 +69,7 @@
 		recommended_enemies = 9	// 3+3+3 - d' magic number o' magic numbars mon
 		acolytes_needed = 15
 
-	if(config.protect_roles_from_antagonist)
+	if(game_options.protect_roles_from_antagonist)
 		restricted_jobs += protected_jobs
 
 	for(var/datum/mind/player in antag_candidates)

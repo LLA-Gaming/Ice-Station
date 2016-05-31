@@ -156,7 +156,7 @@ var/next_external_rsc = 0
 
 
 /client/proc/proxycheck()
-	var/list/httpstuff = world.Export("http://check.getipintel.net/check.php?ip=[address]&contact=[config.getipintel_email]&flags=b")
+	var/list/httpstuff = world.Export("http://check.getipintel.net/check.php?ip=[address]&contact=[config.getipintelemail]&flags=b")
 	if(!httpstuff)
 		return -50 //error code
 	var/n = httpstuff["CONTENT"]
@@ -214,7 +214,7 @@ var/list/bad_ips = list() //prevent users already checked by the system from spa
 				del(src)
 				return 0
 			danger = proxycheck()
-			if(danger >= config.getipintel_limit)
+			if(danger >= config.getipintellimit)
 				log_access("Failed Login: [key] - New account attempting to connect with a proxy([danger*100]% possibility to be a proxy.)")
 				message_admins("Failed Login: [key] - with a proxy([danger*100]% possibility to be a proxy.</span>")
 				src << "Sorry but you're not allowed to connect to the server through a proxy. Disable it and reconnect if you want to play."

@@ -122,7 +122,7 @@
 					user << "<span class='warning'>Sticking a dead brain into the frame would sort of defeat the purpose.</span>"
 					return
 
-				if((config) && (!config.allow_ai))
+				if((config) && (!game_options.allow_ai))
 					user << "<span class='warning'>This MMI does not seem to fit.</span>"
 					return
 

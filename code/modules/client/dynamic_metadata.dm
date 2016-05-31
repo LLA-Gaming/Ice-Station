@@ -5,7 +5,7 @@
 /proc
 
 	LoadMetadata(var/ckey, var/id)
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return
 
 		establish_db_connection()
@@ -24,7 +24,7 @@
 
 	// Will override previous entries
 	SaveMetadata(var/ckey, var/id, var/value)
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return
 
 		establish_db_connection()
@@ -60,7 +60,7 @@
 			return 1
 
 	ModifyMetadata(var/ckey, var/id, var/change = 1)
-		if(!config.sql_enabled)
+		if(!sql_config.sql_enabled)
 			return
 
 		establish_db_connection()

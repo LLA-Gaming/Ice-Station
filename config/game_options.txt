@@ -1,3 +1,4 @@
+[Game Options]
 ### HEALTH ###
 
 # level of health at which a mob becomes unconscious (crit)
@@ -21,11 +22,11 @@ REVIVAL_BRAIN_LIFE -1
 ### RENAMING ###
 
 #Uncomment to allow cyborgs to rename themselves at roundstart.  Has no effect on roboticists renaming cyborgs the normal way.
-RENAME_CYBORG
+RENAME_CYBORG 1
 
 ### OOC DURING ROUND ###
 #Comment this out if you want OOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
-OOC_DURING_ROUND
+OOC_DURING_ROUND 1
 
 ### MOB MOVEMENT ###
 
@@ -44,17 +45,17 @@ WALK_DELAY 4
 HUMAN_DELAY 0
 ROBOT_DELAY 0
 MONKEY_DELAY 0
-ALIEN_DELAY 0
+ALIEN_DELAY 1
 SLIME_DELAY 0
 ANIMAL_DELAY 0
 
 
 ### NAMES ###
 ## If uncommented this adds a random surname to a player's name if they only specify one name.
-HUMANS_NEED_SURNAMES
+HUMANS_NEED_SURNAMES 1
 
 ## If uncommented, this forces all players to use random names !and appearances!.
-#FORCE_RANDOM_NAMES
+#FORCE_RANDOM_NAMES 1
 
 
 ### ALERT LEVELS ###
@@ -73,40 +74,15 @@ ALERT_DELTA The station's self-destruct mechanism has been engaged. All crew are
 ## than the boring old circular explosions. They require more CPU and are (as of March 2013) experimental.
 ## The default map is generally designed for the old style explosions in terms of security.
 
-#USE_RECURSIVE_EXPLOSIONS
-
-
-### GAME MODES ###
-
-## Probablities for game modes chosen in 'secret' and 'random' modes.
-## Default probablity is 1, increase to make that mode more likely to be picked.
-## Set to 0 to disable that mode.
-
-PROBABILITY EXTENDED 1
-PROBABILITY TRAITOR 4
-PROBABILITY TRAITORCHAN 2
-PROBABILITY DOUBLE_AGENTS 3
-PROBABILITY BETRAYED 3
-PROBABILITY NUCLEAR 3
-PROBABILITY REVOLUTION 3
-PROBABILITY CULT 1
-PROBABILITY CHANGELING 3
-PROBABILITY WIZARD 2
-PROBABILITY MALFUNCTION 2
-PROBABILITY METEOR 0
-PROBABILITY BLOB 1
-
-
-## You probably want to keep sandbox off by default for secret and random.
-PROBABILITY SANDBOX 0
+#USE_RECURSIVE_EXPLOSIONS 1
 
 ## Uncomment to make rounds which end instantly (Rev, Wizard, Malf) continue until
 ## the shuttle is called or the station is nuked.
 ## Malf and Rev will let the shuttle be called when the antags/protags are dead.
-#CONTINUOUS_ROUND_REV
-#CONTINUOUS_ROUND_WIZ
-#CONTINUOUS_ROUND_MALF
-#CONTINUOUS_ROUND_BETRAYED
+#CONTINUOUS_ROUND_REV 1
+#CONTINUOUS_ROUND_WIZ 1
+#CONTINUOUS_ROUND_MALF 1
+#CONTINUOUS_ROUND_BETRAYED 1
 
 ## The amount of time it takes for the emergency shuttle to be called, from round start.
 SHUTTLE_REFUEL_DELAY 12000
@@ -121,24 +97,24 @@ CHANGELING_SCALING_MINIMUM 2
 
 ## Uncomment to prohibit jobs that start with loyalty
 ## implants from being most antagonists.
-#PROTECT_ROLES_FROM_ANTAGONIST
+#PROTECT_ROLES_FROM_ANTAGONIST 1
 
 ## If late-joining players have a chance to become a traitor/changeling
-ALLOW_LATEJOIN_ANTAGONISTS
+ALLOW_LATEJOIN_ANTAGONISTS 1
 
 ## Uncomment to allow players to see the set odds of different rounds in secret/random in the get server revision screen. This will NOT tell the current roundtype.
-#SHOW_GAME_TYPE_ODDS
+#SHOW_GAME_TYPE_ODDS 1
 
 ### RANDOM EVENTS ###
 
 ## Comment this to disable random events during the round.
-ALLOW_RANDOM_EVENTS
+ALLOW_RANDOM_EVENTS 1
 
 
 ### AI ###
 
 ## Allow the AI job to be picked.
-ALLOW_AI
+ALLOW_AI 1
 
 
 
@@ -154,36 +130,36 @@ GATEWAY_DELAY 18000
 ## This is intended for servers with low populations - where there are not enough
 ## players to fill all roles, so players need to do more than just one job.
 ## Also for servers where they don't want people to hide in their own departments.
-JOBS_HAVE_MINIMAL_ACCESS
+JOBS_HAVE_MINIMAL_ACCESS 1
 
 ## Uncomment to give assistants maint access.
-ASSISTANTS_HAVE_MAINT_ACCESS
+ASSISTANTS_HAVE_MAINT_ACCESS 1
 
 ## Uncoment to give security maint access. Note that if you comment JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
-SECURITY_HAS_MAINT_ACCESS
+SECURITY_HAS_MAINT_ACCESS 1
 
 ## Uncomment to give everyone maint access.
-#EVERYONE_HAS_MAINT_ACCESS
+#EVERYONE_HAS_MAINT_ACCESS 1
 
 ## Comment this to make security officers spawn in departmental security posts
-#SEC_START_BRIG
+#SEC_START_BRIG 1
 
 
 ### GHOST INTERACTION ###
 ## Uncomment to let ghosts spin chairs. You may be wondering why this is a config option. Don't ask.
-GHOST_INTERACTION
+GHOST_INTERACTION 1
 
 ### NON-VOCAL SILICONS ###
 ## Uncomment to stop the AI, or cyborgs, from having vocal communication.
-#SILENT_AI
-#SILENT_BORG
+#SILENT_AI 1
+#SILENT_BORG 1
 
 ### SANDBOX PANEL AUTOCLOSE ###
 ## The sandbox panel's item spawning dialog now stays open even after you click an option.
 ## If you find that your players are abusing the sandbox panel, this option may slow them down
 ## without preventing people from using it properly.
 ## Only functions in sandbox game mode.
-#SANDBOX_AUTOCLOSE
+#SANDBOX_AUTOCLOSE 1
 
 ### ROUNDSTART SILICON LAWS ###
 ## This controls what the AI's laws are at the start of the round.
@@ -193,21 +169,40 @@ GHOST_INTERACTION
 DEFAULT_LAWS 0
 
 ## Uncoment to give players the choice of their mutantrace before they join the game
-#JOIN_WITH_MUTANT_RACE
+#JOIN_WITH_MUTANT_RACE 1
 
 ### RANDOMIZED ENGINE ###
 ## Allows usage of multiple "template" engines, allowing a random engine to be picked at every roundstart. For now all engines have equal chance.
 ## If this is used without any template engines on the map, it will literally result in engineering being deleted at round start. Template engines can be anywhere on the map, and will be deleted after engineering is set up.
 ## Uncomment to enable.
-#RANDOMIZE_ENGINE_TEMPLATE
-
-### EVENT CONFIGURATION ###
-## EVENTS_FOCUS should be a number between 0.01 and 1. this number will end up deciding the event's stddev by this formula (events_list.len * focus)
-## EVENTS_QUEUE_GHOST_EVENTS will allow events that require ghosts (Alien,ninja) to fire but if no ghosts are available it will check every tick for candidates, if it finds some. it will start the event
-## EVENT_TIMELOCKS will prevent some events from firing to early into the round.
-EVENTS_FOCUS 0.25
-EVENTS_QUEUE_GHOSTS_EVENTS 1
-EVENT_TIMELOCKS 1
+#RANDOMIZE_ENGINE_TEMPLATE 1
 
 ### Lowpop gamemode scaling ###
 ALLOW_LOWPOP_MODES 1
+
+
+[Game Modes]
+
+### GAME MODES ###
+
+## Probablities for game modes chosen in 'secret' and 'random' modes.
+## Default probablity is 1, increase to make that mode more likely to be picked.
+## Set to 0 to disable that mode.
+
+EXTENDED 1
+TRAITOR 3
+TRAITORCHAN 2
+DOUBLE_AGENTS 1
+BETRAYED 0
+NUCLEAR 3
+REVOLUTION 3
+CULT 2
+CHANGELING 2
+WIZARD 2
+MALFUNCTION 2
+METEOR 0
+BLOB 1
+
+
+## You probably want to keep sandbox off by default for secret and random.
+SANDBOX 0

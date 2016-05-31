@@ -10,7 +10,7 @@
 	return
 	#endif
 
-	if(!config.sql_enabled)
+	if(!sql_config.sql_enabled)
 		return
 	establish_db_connection()
 	if(!dbcon.IsConnected())
@@ -94,7 +94,7 @@
 /client/proc/HasMedal(var/id)
 	if(!id)	return 0
 
-	if(!config.sql_enabled)
+	if(!sql_config.sql_enabled)
 		return 0
 	establish_db_connection()
 	if(!dbcon.IsConnected())
@@ -123,7 +123,7 @@
 	set name = "Show Medals"
 	set category = "OOC"
 
-	if(!config.sql_enabled)
+	if(!sql_config.sql_enabled)
 		return
 	establish_db_connection()
 	if(!dbcon.IsConnected())

@@ -30,7 +30,7 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 	var/original_msg = msg
 
 	var/datum/admin_conversation/conversation
-	if(config.sql_enabled)
+	if(sql_config.sql_enabled)
 		conversation = CreateAdminConversation(src.ckey, original_msg, 1)
 
 	//explode the input msg into a list

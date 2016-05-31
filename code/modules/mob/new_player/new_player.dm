@@ -283,7 +283,7 @@
 		joined_player_list += character.ckey
 
 		if(!(rank in list("Perseus Security Enforcer", "Perseus Security Commander")))
-			if(config.allow_latejoin_antagonists && emergency_shuttle.timeleft() > 300) //Don't make them antags if the station is evacuating
+			if(game_options.allow_latejoin_antagonists && emergency_shuttle.timeleft() > 300) //Don't make them antags if the station is evacuating
 				ticker.mode.make_antag_chance(character)
 		qdel(src)
 
@@ -366,7 +366,7 @@
 
 		create_dna(new_character)
 
-		if(config.force_random_names || appearance_isbanned(src))
+		if(game_options.force_random_names || appearance_isbanned(src))
 			client.prefs.random_character()
 			client.prefs.real_name = random_name(gender)
 		client.prefs.copy_to(new_character)

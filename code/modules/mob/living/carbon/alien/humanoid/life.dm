@@ -99,7 +99,7 @@
 		var/datum/gas_mixture/environment = loc.return_air()
 		var/datum/gas_mixture/breath
 		// HACK NEED CHANGING LATER
-		if(health <= config.health_threshold_crit)
+		if(health <= game_options.health_threshold_crit)
 			losebreath++
 
 		if(losebreath>0) //Suffocating so do not take a breath
@@ -306,7 +306,7 @@
 			blinded = 1
 			silent = 0
 		else				//ALIVE. LIGHTS ARE ON
-			if(health < config.health_threshold_dead || !getorgan(/obj/item/organ/brain))
+			if(health < game_options.health_threshold_dead || !getorgan(/obj/item/organ/brain))
 				death()
 				blinded = 1
 				stat = DEAD
@@ -314,7 +314,7 @@
 				return 1
 
 			//UNCONSCIOUS. NO-ONE IS HOME
-			if( (getOxyLoss() > 50) || (config.health_threshold_crit >= health) )
+			if( (getOxyLoss() > 50) || (game_options.health_threshold_crit >= health) )
 				if( health <= 20 && prob(1) )
 					spawn(0)
 						emote("gasp")

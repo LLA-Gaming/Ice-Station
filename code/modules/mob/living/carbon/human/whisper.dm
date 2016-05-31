@@ -47,7 +47,7 @@
 
 	// If whispering your last words, limit the whisper based on how close you are to death.
 	if(critical)
-		var/health_diff = round(-config.health_threshold_dead + health)
+		var/health_diff = round(-game_options.health_threshold_dead + health)
 		// If we cut our message short, abruptly end it with a-..
 		var/message_len = length(message)
 		message = copytext(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"

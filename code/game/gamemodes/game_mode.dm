@@ -17,7 +17,6 @@
 	var/config_tag = null
 	var/intercept_hacked = 0
 	var/votable = 1
-	var/probability = 1
 	var/station_was_nuked = 0 //see nuclearbomb.dm and malfunction.dm
 	var/explosion_in_progress = 0 //sit back and relax
 	var/list/datum/mind/modePlayer = new
@@ -61,7 +60,7 @@
 		if(playerC < required_players)
 			minicheck = 1
 		if(minicheck && !forced)
-			if(config.allow_lowpop_modes && can_run_at_minimum) // check for scaled gamemodes, only on participating gamemodes.
+			if(game_options.allow_lowpop_modes && can_run_at_minimum) // check for scaled gamemodes, only on participating gamemodes.
 				var/list/jobs_needed = required_jobs_on_minimum
 				var/reserved_count = 0
 				for(var/job in jobs_needed)

@@ -638,8 +638,8 @@ var/global/floorIsLava = 0
 	set category = "Server"
 	set desc="People can't be AI"
 	set name="Toggle AI"
-	config.allow_ai = !( config.allow_ai )
-	if (!( config.allow_ai ))
+	game_options.allow_ai = !( game_options.allow_ai )
+	if (!( game_options.allow_ai ))
 		world << "<B>The AI job is no longer chooseable.</B>"
 	else
 		world << "<B>The AI job is chooseable now.</B>"
@@ -651,13 +651,13 @@ var/global/floorIsLava = 0
 	set category = "Server"
 	set desc="Respawn basically"
 	set name="Toggle Respawn"
-	abandon_allowed = !( abandon_allowed )
-	if (abandon_allowed)
+	config.respawn = !( config.respawn )
+	if (config.respawn)
 		world << "<B>You may now respawn.</B>"
 	else
 		world << "<B>You may no longer respawn :(</B>"
-	message_admins("\blue [key_name_admin(usr)] toggled respawn to [abandon_allowed ? "On" : "Off"].", 1)
-	log_admin("[key_name(usr)] toggled respawn to [abandon_allowed ? "On" : "Off"].")
+	message_admins("\blue [key_name_admin(usr)] toggled respawn to [config.respawn ? "On" : "Off"].", 1)
+	log_admin("[key_name(usr)] toggled respawn to [config.respawn ? "On" : "Off"].")
 	world.update_status()
 	feedback_add_details("admin_verb","TR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 

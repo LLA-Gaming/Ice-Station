@@ -18,7 +18,7 @@ var/list/
 
 	if(!config.perseus_legacy_system)
 		establish_db_connection()
-		if(!config.sql_enabled || !dbcon.IsConnected())
+		if(!sql_config.sql_enabled || !dbcon.IsConnected())
 			config.perseus_legacy_system = 1
 			loadPerseusList()
 			return

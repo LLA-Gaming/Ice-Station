@@ -129,12 +129,12 @@ datum/hSB
 				//
 				if("hsbtac")
 					if(!admin) return
-					if(config.sandbox_autoclose)
+					if(game_options.sandbox_autoclose)
 						world << "<b>\blue Sandbox:  \black [usr.key] has removed the object spawn limiter.</b>"
-						config.sandbox_autoclose = 0
+						game_options.sandbox_autoclose = 0
 					else
 						world << "<b>\red Sandbox:  \black [usr.key] has added a limiter to object spawning.  The window will now auto-close after use.</b>"
-						config.sandbox_autoclose = 1
+						game_options.sandbox_autoclose = 1
 					return
 				//
 				// Spacesuit with full air jetpack set as internals
@@ -283,7 +283,7 @@ datum/hSB
 						return
 					new typepath(usr.loc)
 
-					if(config.sandbox_autoclose)
+					if(game_options.sandbox_autoclose)
 						usr << browse(null,"window=sandbox")
 				//
 				// For everything else in the href list
@@ -295,5 +295,5 @@ datum/hSB
 						return
 					new typepath(usr.loc)
 
-					if(config.sandbox_autoclose)
+					if(game_options.sandbox_autoclose)
 						usr << browse(null,"window=sandbox")
