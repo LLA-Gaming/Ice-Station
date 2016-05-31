@@ -961,7 +961,7 @@ atom/proc/GetTypeInAllContents(typepath)
 						fromupdate += ttl
 
 					else
-						T.ChangeTurf(/turf/space)
+						T.ChangeTurf(/turf/surface)
 
 					refined_src -= T
 					refined_trg -= B

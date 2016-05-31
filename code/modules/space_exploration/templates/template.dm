@@ -50,7 +50,7 @@ var/datum/template_controller/template_controller
 
 				var/breakout = 0
 				for(var/turf/T in turfs)
-					if(!(istype(T, /turf/space)))
+					if(!(istype(T, /turf/surface)))
 						breakout = 1
 						break
 

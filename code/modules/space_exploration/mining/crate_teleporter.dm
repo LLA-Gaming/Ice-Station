@@ -161,7 +161,7 @@ var/list/crate_teleporter_pads = list()
 			return 0
 
 	attackby(var/obj/item/I, var/mob/living/user)
-		if(istype(get_turf(src), /turf/space))
+		if(istype(get_turf(src), /turf/space) || istype(get_turf(src), /turf/surface))
 			return 0
 
 		if(istype(I, /obj/item/weapon/wrench) && istype(loc, /turf))

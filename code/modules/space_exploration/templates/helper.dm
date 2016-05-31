@@ -26,7 +26,7 @@ var/list/_TempTemplateTurfs = list()
 
 		return 0
 
-	proc/FlattenArea(var/turf/point1, var/turf/point2, var/replace_with = /turf/space)
+	proc/FlattenArea(var/turf/point1, var/turf/point2, var/replace_with = /turf/surface)
 		for(var/turf/T in block(point1, point2))
 			for(var/atom/movable/M in T)
 				if(istype(M, /mob))

@@ -30,7 +30,7 @@
 				T.CalculateAdjacentTurfs()
 				air_master.add_to_active(T,1)
 
-			if(istype(T, /turf/space))
+			if(istype(T, /turf/surface))
 				continue
 
 			//var/area/turf_area = get_area(T)
@@ -66,7 +66,7 @@
 			var/list/row = grid["[y]"]
 			var/x = 0
 			for(var/datum/dmm_object/object in row)
-				turfs += object.Instantiate(locate(origin.x + x, origin.y + y, origin.z), ((!object.HasArea()) && (!object.GetSubByType(/turf/space, 0))) ? A : null)
+				turfs += object.Instantiate(locate(origin.x + x, origin.y + y, origin.z), ((!object.HasArea()) && (!object.GetSubByType(/turf/surface, 0))) ? A : null)
 				x++
 
 		HandleEdgeCases()
@@ -100,7 +100,7 @@
 						continue
 				qdel(M)
 
-			T.ChangeTurf(/turf/space)
+			T.ChangeTurf(/turf/surface)
 
 		if(delete_src)
 			qdel(src)

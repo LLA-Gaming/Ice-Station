@@ -2,6 +2,7 @@
 
 var/global/list/uneatable = list(
 	/turf/space,
+	/turf/surface,
 	/obj/effect/overlay
 	)
 
@@ -301,7 +302,7 @@ var/global/list/uneatable = list(
 					continue
 				if(O.invisibility == 101)
 					src.consume(O)
-		T.ChangeTurf(/turf/space)
+		T.ChangeTurf(/turf/surface)
 		gain = 2
 	src.energy += gain
 	return
