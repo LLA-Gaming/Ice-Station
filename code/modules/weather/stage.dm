@@ -9,14 +9,20 @@
 
 	New(var/datum/weather/_parent)
 		parent = _parent
-
 		duration = rand(duration_min, duration_max)
 
 	proc/OnStart()
 		started = world.time
+
+		for(var/image/I in GetOverlays())
+			THE_SURFACE.overlays += I
+
 		return 0
 
 	proc/OnEnd()
+		for(var/image/I in GetOverlays())
+			THE_SURFACE.overlays -= I
+
 		return 0
 
 	proc/HandleLogin(var/mob/living/L)
@@ -24,3 +30,6 @@
 
 	proc/Process()
 		return 0
+
+	proc/GetOverlays()
+		return list()

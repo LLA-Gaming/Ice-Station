@@ -112,4 +112,13 @@ proc/vol_by_throwforce_and_or_w_class(var/obj/item/I)
 	adjust_fire_stacks(0.5)
 	IgniteMob()
 
+/mob/living/proc/IsProtectedFromHail()
+	if(istype(src, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = src
+		if(H.head && istype(H.head, /obj/item/clothing/head))
+			var/obj/item/clothing/head/head = H.head
+			return head.IsProtectingFromHail()
+
+	return 0
+
 //Mobs on Fire end

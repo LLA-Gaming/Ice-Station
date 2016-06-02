@@ -1,4 +1,17 @@
 [Ice]
+
+# Environment
 snow_slowdown_factor 1.4
+
+# Lighting
 sunlight_intensity 3
 instant_lighting 0
+
+# Weather
+lightning_strike_chance 3
+lightnings_per_chance 7
+snow_increase_depth_chance 33
+hail_damage 4
+snow_increase_neighbor_chance 60
+fog_chill_minimum_bodytemp 70
+fog_chill_bodytemp_loss_rate 15

@@ -71,6 +71,9 @@ BLIND     // can't see anything
 	body_parts_covered = HEAD
 	slot_flags = SLOT_HEAD
 
+	proc/IsProtectingFromHail()
+		return 0
+
 //Mask
 /obj/item/clothing/mask
 	name = "mask"

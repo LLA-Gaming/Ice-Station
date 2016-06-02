@@ -23,7 +23,6 @@ var/global/list/Z1_SNOW_TURFS = list()
 		update_icon()
 		if(z == 1)
 			Z1_SURFACE_TURFS += src
-	update_sunlight()
 
 	proc/update_sunlight()
 		for(var/t in RANGE_TURFS(1,src))
@@ -95,6 +94,5 @@ var/global/list/Z1_SNOW_TURFS = list()
 					usr << "This snow looks to be about human-height."
 
 		proc/SetDepth(var/new_depth)
-			depth = new_depth
+			depth = Clamp(new_depth, 1, 8)
 			update_icon()
-
