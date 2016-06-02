@@ -6,7 +6,7 @@ var/global/list/Z1_SNOW_TURFS = list()
 /turf/surface
 	icon = 'icons/turf/snow.dmi'
 	name = "surface"
-	icon_state = "snow0"
+	icon_state = "snow1"
 	intact = 0
 
 	gasses = list(OXYGEN = MOLES_O2STANDARD, NITROGEN = MOLES_N2STANDARD)
@@ -23,6 +23,7 @@ var/global/list/Z1_SNOW_TURFS = list()
 		update_icon()
 		if(z == 1)
 			Z1_SURFACE_TURFS += src
+		update_sunlight()
 
 	proc/update_sunlight()
 		for(var/t in RANGE_TURFS(1,src))
