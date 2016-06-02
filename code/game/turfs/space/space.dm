@@ -140,15 +140,8 @@ var/datum/space_grid/space_grid = new()
 				return
 
 			var/move_to_z = src.z
+			/*
 			var/safety = 1
-
-			//Check if it's a mob pulling an object
-			var/obj/was_pulling = null
-			var/mob/living/MOB = null
-			if(isliving(A))
-				MOB = A
-				if(MOB.pulling)
-					was_pulling = MOB.pulling //Store the object to transition later
 
 			var/direction
 			if(x <= TRANSITIONEDGE)
@@ -167,9 +160,17 @@ var/datum/space_grid/space_grid = new()
 				safety++
 				if(safety > 10)
 					break
-
+			*/
 			if(!move_to_z)
 				return
+
+			//Check if it's a mob pulling an object
+			var/obj/was_pulling = null
+			var/mob/living/MOB = null
+			if(isliving(A))
+				MOB = A
+				if(MOB.pulling)
+					was_pulling = MOB.pulling //Store the object to transition later
 
 			A.z = move_to_z
 
